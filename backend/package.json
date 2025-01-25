@@ -4,9 +4,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon --exec node --loader ts-node/esm ./src/index.ts",
+    "dev": "nodemon ./src/index.ts",
     "build": "rimraf ./dist && tsc --build ./tsconfig.json",
     "start": "node ./dist/index.js",
     "prettify": "prettier --log-level warn --cache --write '{src/**/*,*}.{ts,tsx,js,json,yml,scss}'"
@@ -15,9 +14,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@trpc/server": "^10.45.2",
+    "cors": "^2.8.5",
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.10",
     "nodemon": "^3.1.9",
